@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mug Studio — Landing Pages de Alta Conversão</title>
+    <meta name="description" content="Mug é um studio de design conceitual e underground. Criamos landing pages radicais e de alta conversão que se recusam a ser ignoradas.">
+    <!-- Google Fonts: Syne (400, 500, 700, 800) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <!-- Base Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Custom Cursor -->
+    <div id="custom-cursor"></div>
+
+    <!-- Mobile Menu Fullscreen Overlay -->
+    <div class="mobile-menu-overlay" id="mobileMenu">
+        <div class="mobile-menu-header">
+            <span class="brand-mobile">mug</span>
+            <button class="mobile-close-btn" id="closeMenuBtn" aria-label="Fechar menu">
+                <span class="close-line"></span>
+            </button>
+        </div>
+        <nav class="mobile-nav">
+            <a href="#projetos" class="mobile-nav-link" data-hover="true">PROJETOS</a>
+            <a href="#processo" class="mobile-nav-link" data-hover="true">PROCESSO</a>
+            <a href="https://wa.me/5511945470712" target="_blank" rel="noopener noreferrer" class="mobile-nav-link" data-hover="true">CONTATO</a>
+        </nav>
+        <div class="mobile-menu-footer">
+            <a href="https://wa.me/5511945470712" target="_blank" rel="noopener noreferrer" class="btn-primary mobile-cta" data-hover="true">INICIAR PROJETO ↗</a>
+        </div>
+    </div>
+
+    <!-- Core Layout Container -->
+    <div class="hero-section">
+
+        <!-- Zona Superior: Top Fixed Nav (~10% Height) -->
+        <header class="top-header">
+            <a href="/" class="brand" data-hover="true">mug</a>
+            
+            <nav class="desktop-nav">
+                <a href="#projetos" class="nav-link" data-hover="true">PROJETOS</a>
+                <a href="#processo" class="nav-link" data-hover="true">PROCESSO</a>
+                <a href="https://wa.me/5511945470712" target="_blank" rel="noopener noreferrer" class="nav-link" data-hover="true">CONTATO</a>
+            </nav>
+            
+            <div class="header-right">
+                <a href="https://wa.me/5511945470712" target="_blank" rel="noopener noreferrer" class="cta-nav" data-hover="true">INICIAR PROJETO ↗</a>
+                <button class="mobile-menu-btn" id="openMenuBtn" aria-label="Abrir menu">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+            </div>
+        </header>
+
+        <!-- Zona Central: Headline and Impact -->
+        <main class="hero-center">
+            <h1 class="headline" id="heroHeadline">
+                DESIGN NÃO <br>É ENFEITE.<br>É ALAVANCA.
+            </h1>
+        </main>
+
+        <!-- Zona Inferior: Subheadline & Actions (~20% Height) -->
+        <footer class="hero-bottom">
+            <div class="footer-grid">
+                <div class="footer-left">
+                    <p class="subheadline">
+                        Um studio para founders que tratam a landing page como produto, não como panfleto. Design orientado a conversão, estratégia antes do pixel, zero template.
+                    </p>
+                </div>
+                <div class="footer-right">
+                    <div class="cta-group">
+                        <a href="#projetos" class="btn-primary" data-hover="true">VER PROJETOS →</a>
+                        <a href="https://wa.me/5511945470712" target="_blank" rel="noopener noreferrer" class="btn-secondary" data-hover="true">Agendar uma conversa</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Detail Bar -->
+            <div class="bottom-bar">
+                <div class="scroll-indicator">
+                    <span class="scroll-text">ROLAR</span>
+                    <svg class="scroll-arrow" width="10" height="12" viewBox="0 0 10 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M5 0V11M5 11L1 7M5 11L9 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- Zona 4: Manifesto Section (Problema -> Solução) -->
+    <section class="manifesto-section" id="manifesto">
+        <div class="manifesto-container">
+            
+            <!-- Single Column Manifesto copy in 48px -->
+            <div class="manifesto-content-block">
+                <h2 class="manifesto-text" id="manifestoText">
+                    Uma landing page é uma decisão. A nossa faz seu cliente decidir +86% mais rápido.
+                </h2>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Seção 5: Cases em Destaque (Problema -> Solução -> Obra) -->
+    <section class="cases-section" id="projetos">
+        <div class="cases-container">
+            
+            <!-- Faixa Superior (Cabeçalho da Seção) -->
+            <header class="cases-header">
+                <div class="cases-header-grid">
+                    <div class="cases-header-left">
+                        <h2 class="cases-title">PROJETOS RECENTES.</h2>
+                    </div>
+                    <div class="cases-header-right">
+                        <p class="cases-description">
+                            Cada projeto começa numa pergunta diferente. O que se repete é o método.
+                        </p>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Lista de Cases (Exatamente 3) -->
+            <div class="cases-list">
+                
+                <!-- CASE 01: Compass -->
+                <a href="https://compasso-nine.vercel.app/" target="_blank" rel="noopener noreferrer" class="cases-list-item" data-hover="true">
+                    <div class="case-thumbnail-container">
+                        <div class="case-thumbnail-reveal-wrapper">
+                            <video src="hero_compass.mp4" poster="convrt_preview.png" autoplay muted loop playsinline preload="metadata" class="case-image"></video>
+                        </div>
+                    </div>
+                    <div class="case-info-block">
+                        <div class="case-info-number">CASE 01 / 03</div>
+                        <h3 class="case-info-name">Compass</h3>
+                        <p class="case-info-segment">landing page para um aplicativo financeiro</p>
+                        <span class="case-info-cta">ABRIR CASE ↗</span>
+                    </div>
+                </a>
+
+                <!-- CASE 02: Rota -->
+                <a href="https://rota-cyan.vercel.app/" target="_blank" rel="noopener noreferrer" class="cases-list-item layout-reversed" data-hover="true">
+                    <div class="case-thumbnail-container">
+                        <div class="case-thumbnail-reveal-wrapper">
+                            <video src="hero_rota.mp4" poster="greulichs_preview.png" autoplay muted loop playsinline preload="metadata" class="case-image"></video>
+                        </div>
+                    </div>
+                    <div class="case-info-block">
+                        <div class="case-info-number">CASE 02 / 03</div>
+                        <h3 class="case-info-name">Rota</h3>
+                        <p class="case-info-segment">landing page para um SaaS de logística</p>
+                        <span class="case-info-cta">ABRIR CASE ↗</span>
+                    </div>
+                </a>
+
+                <!-- CASE 03: Barro -->
+                <a href="https://barro-nu.vercel.app/" target="_blank" rel="noopener noreferrer" class="cases-list-item" data-hover="true">
+                    <div class="case-thumbnail-container">
+                        <div class="case-thumbnail-reveal-wrapper">
+                            <video src="hero_barro.mp4" poster="theforever_preview.png" autoplay muted loop playsinline preload="metadata" class="case-image"></video>
+                        </div>
+                    </div>
+                    <div class="case-info-block">
+                        <div class="case-info-number">CASE 03 / 03</div>
+                        <h3 class="case-info-name">Barro</h3>
+                        <p class="case-info-segment">landing page para um ateliê de cerâmica artesanal</p>
+                        <span class="case-info-cta">ABRIR CASE ↗</span>
+                    </div>
+                </a>
+
+            </div>
+
+
+
+        </div>
+    </section>
+
+    <!-- Seção 6: Processo / Método ( Blueprint Técnico ) -->
+    <section class="process-section" id="processo">
+        <div class="process-container">
+            
+            <!-- Faixa Superior (Cabeçalho da Seção) -->
+            <header class="process-header">
+                <div class="process-header-grid">
+                    <div class="process-header-left">
+                        <h2 class="process-title">COMO A GENTE TRABALHA.</h2>
+                    </div>
+                    <div class="process-header-right">
+                        <p class="process-description">
+                            Cinco etapas. Sem mistério. Cada uma existe por um motivo.
+                        </p>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Bloco da Timeline (Horizontal no Desktop, Vertical no Mobile) -->
+            <div class="process-timeline">
+                
+                <!-- Linha-Base Contínua -->
+                <div class="process-timeline-line"></div>
+                
+                <!-- Etapas da Timeline (Exatamente 5) -->
+                <div class="process-timeline-steps">
+                    
+                    <!-- ETAPA 01: Discovery -->
+                    <div class="process-step">
+                        <span class="process-step-number">01</span>
+                        <div class="process-marker"></div>
+                        <div class="process-step-content">
+                            <span class="process-step-mob-number">01</span>
+                            <h3 class="process-step-name">DISCOVERY<br>& ESTRATÉGIA</h3>
+                        </div>
+                    </div>
+
+                    <!-- ETAPA 02: Wireframe -->
+                    <div class="process-step">
+                        <span class="process-step-number">02</span>
+                        <div class="process-marker"></div>
+                        <div class="process-step-content">
+                            <span class="process-step-mob-number">02</span>
+                            <h3 class="process-step-name">WIREFRAME<br>& COPY</h3>
+                        </div>
+                    </div>
+
+                    <!-- ETAPA 03: Design -->
+                    <div class="process-step">
+                        <span class="process-step-number">03</span>
+                        <div class="process-marker"></div>
+                        <div class="process-step-content">
+                            <span class="process-step-mob-number">03</span>
+                            <h3 class="process-step-name">DESIGN<br>& PROTÓTIPO</h3>
+                        </div>
+                    </div>
+
+                    <!-- ETAPA 04: Handoff -->
+                    <div class="process-step">
+                        <span class="process-step-number">04</span>
+                        <div class="process-marker"></div>
+                        <div class="process-step-content">
+                            <span class="process-step-mob-number">04</span>
+                            <h3 class="process-step-name">HANDOFF<br>& IMPLEMENTAÇÃO</h3>
+                        </div>
+                    </div>
+
+                    <!-- ETAPA 05: Otimização -->
+                    <div class="process-step">
+                        <span class="process-step-number">05</span>
+                        <div class="process-marker"></div>
+                        <div class="process-step-content">
+                            <span class="process-step-mob-number">05</span>
+                            <h3 class="process-step-name">OTIMIZAÇÃO<br>PÓS-LANÇAMENTO</h3>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Faixa Inferior (Rodapé da Seção) -->
+            <footer class="process-footer">
+                <a href="https://wa.me/5511945470712" target="_blank" rel="noopener noreferrer" class="process-footer-cta" data-hover="true">INICIAR UM PROJETO →</a>
+            </footer>
+
+        </div>
+    </section>
+
+    <!-- Seção 7: Diferenciais / Princípios ( Ficha Técnica Mug ) -->
+    <section class="about-section" id="diferenciais">
+        <div class="about-container">
+            
+            <!-- Faixa Superior (Cabeçalho da Seção) -->
+            <header class="about-header">
+                <div class="about-header-grid">
+                    <div class="about-header-left">
+                        <h2 class="about-title">O QUE NOS DEFINE.</h2>
+                    </div>
+                    <div class="about-header-right">
+                        <p class="about-description">
+                            Não é manifesto, é método. O que está aqui está em cada projeto que sai do studio.
+                        </p>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Grade de Pilares (4 colunas no Desktop) -->
+            <div class="about-grid">
+                
+                <!-- PILAR 01: Estratégia -->
+                <div class="about-pilar" data-idx="0">
+                    <div class="about-glyph pilar-glyph-01">
+                        <!-- SVG Pilar 01: quadrado com diagonal -->
+                        <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="48" height="48" fill="#000000"/>
+                            <line x1="0" y1="48" x2="48" y2="0" stroke="#FFFFFF" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <span class="about-pilar-number">01</span>
+                    <h3 class="about-pilar-title">primeiro estratégia.</h3>
+                    <p class="about-pilar-phrase">
+                        A gente não abre o Figma sem entender o problema. Design sem hipótese é decoração cara.
+                    </p>
+                </div>
+
+                <!-- PILAR 02: Copy -->
+                <div class="about-pilar" data-idx="1">
+                    <div class="about-glyph pilar-glyph-02">
+                        <!-- SVG Pilar 02: quadrados sobrepostos -->
+                        <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Quadrado de trás in outline -->
+                            <rect class="glyph-bg-square" x="4" y="4" width="30" height="30" stroke="#000000" stroke-width="2" fill="transparent"/>
+                            <!-- Quadrado da frente em preto sólido -->
+                            <rect class="glyph-fg-square" x="14" y="14" width="30" height="30" fill="#000000"/>
+                        </svg>
+                    </div>
+                    <span class="about-pilar-number">02</span>
+                    <h3 class="about-pilar-title">copy é parte do design.</h3>
+                    <p class="about-pilar-phrase">
+                        Texto e layout nascem juntos. Não terceirizamos a mensagem — ela é metade do produto.
+                    </p>
+                </div>
+
+                <!-- PILAR 03: Foco -->
+                <div class="about-pilar" data-idx="2">
+                    <div class="about-glyph pilar-glyph-03">
+                        <!-- SVG Pilar 03: círculo com ponto interno -->
+                        <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="24" cy="24" r="24" fill="#000000"/>
+                            <circle class="glyph-focus-dot" cx="16" cy="32" r="2.5" fill="#FFFFFF"/>
+                        </svg>
+                    </div>
+                    <span class="about-pilar-number">03</span>
+                    <h3 class="about-pilar-title">foco em conversão.</h3>
+                    <p class="about-pilar-phrase">
+                        O trabalho serve à métrica do cliente. Se ficar bonito no caminho, melhor — mas a régua é outra.
+                    </p>
+                </div>
+
+                <!-- PILAR 04: Independente -->
+                <div class="about-pilar" data-idx="3">
+                    <div class="about-glyph pilar-glyph-04">
+                        <!-- SVG Pilar 04: três linhas paralelas -->
+                        <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <line class="glyph-line-01" x1="0" y1="12" x2="48" y2="12" stroke="#000000" stroke-width="2"/>
+                            <line class="glyph-line-02" x1="0" y1="24" x2="36" y2="24" stroke="#000000" stroke-width="2"/>
+                            <line class="glyph-line-03" x1="0" y1="36" x2="44" y2="36" stroke="#000000" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <span class="about-pilar-number">04</span>
+                    <h3 class="about-pilar-title">independente por escolha.</h3>
+                    <p class="about-pilar-phrase">
+                        Studio pequeno, time enxuto, conversa direta. Sem account, sem PowerPoint, sem intermediário.
+                    </p>
+                </div>
+
+            </div>
+
+
+
+        </div>
+    </section>
+
+    <!-- Seção 8: FAQ ( Dúvidas Frequentes ) -->
+    <section class="faq-section" id="faq">
+        <div class="faq-container">
+            
+            <!-- Faixa Superior (Cabeçalho da Seção) -->
+            <header class="faq-header">
+                <div class="faq-header-grid">
+                    <div class="faq-header-left">
+                        <h2 class="faq-title">FAQ.</h2>
+                    </div>
+                    <div class="faq-header-right">
+                        <p class="faq-description">
+                            Se a sua não está aqui, manda direto. A gente responde rápido — e sem rodeio.
+                        </p>
+                        <a href="https://wa.me/5511945470712" target="_blank" rel="noopener noreferrer" class="faq-header-cta" data-hover="true">FALAR COM A GENTE ↗</a>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Lista Vertical do Accordion (Tabela Editorial) -->
+            <div class="faq-accordion">
+                
+                <!-- ACCORDION ITEM 01 -->
+                <div class="faq-item">
+                    <div class="faq-divider-item"></div>
+                    <button class="faq-trigger" id="faq-q1" aria-expanded="false" aria-controls="faq-a1">
+                        <span class="faq-number">01</span>
+                        <span class="faq-question">quanto tempo leva pra entregar uma lp?</span>
+                        <span class="faq-icon" aria-hidden="true">+</span>
+                    </button>
+                    <div class="faq-panel" id="faq-a1" role="region" aria-labelledby="faq-q1">
+                        <div class="faq-panel-content">
+                            <p>O prazo padrão é de 7 dias, do briefing à publicação. Pode variar pra mais ou pra menos dependendo do escopo, mas a gente nunca começa um projeto sem cravar a data antes.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ACCORDION ITEM 02 -->
+                <div class="faq-item">
+                    <div class="faq-divider-item"></div>
+                    <button class="faq-trigger" id="faq-q2" aria-expanded="false" aria-controls="faq-a2">
+                        <span class="faq-number">02</span>
+                        <span class="faq-question">quanto custa um projeto?</span>
+                        <span class="faq-icon" aria-hidden="true">+</span>
+                    </button>
+                    <div class="faq-panel" id="faq-a2" role="region" aria-labelledby="faq-q2">
+                        <div class="faq-panel-content">
+                            <p>Não trabalhamos com tabela fixa porque cada projeto tem um escopo diferente — uma LP de lançamento não é o mesmo que um site de venda contínua.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ACCORDION ITEM 03 -->
+                <div class="faq-item">
+                    <div class="faq-divider-item"></div>
+                    <button class="faq-trigger" id="faq-q3" aria-expanded="false" aria-controls="faq-a3">
+                        <span class="faq-number">03</span>
+                        <span class="faq-question">vocês escrevem a copy ou eu preciso trazer?</span>
+                        <span class="faq-icon" aria-hidden="true">+</span>
+                    </button>
+                    <div class="faq-panel" id="faq-a3" role="region" aria-labelledby="faq-q3">
+                        <div class="faq-panel-content">
+                            <p>A copy faz parte do trabalho. A gente desenvolve mensagem e estrutura junto. Se você já tem material aprovado, ótimo: a gente refina e adapta. Mas o ponto é que texto e design nascem juntos aqui.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ACCORDION ITEM 04 -->
+                <div class="faq-item">
+                    <div class="faq-divider-item"></div>
+                    <button class="faq-trigger" id="faq-q4" aria-expanded="false" aria-controls="faq-a4">
+                        <span class="faq-number">04</span>
+                        <span class="faq-question">vocês entregam só o design ou implementam também?</span>
+                        <span class="faq-icon" aria-hidden="true">+</span>
+                    </button>
+                    <div class="faq-panel" id="faq-a4" role="region" aria-labelledby="faq-q4">
+                        <div class="faq-panel-content">
+                            <p>Os dois. A gente entrega o design e a implementação completa. Não tem custo escondido de "fase 2".</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ACCORDION ITEM 05 -->
+                <div class="faq-item">
+                    <div class="faq-divider-item"></div>
+                    <button class="faq-trigger" id="faq-q5" aria-expanded="false" aria-controls="faq-a5">
+                        <span class="faq-number">05</span>
+                        <span class="faq-question">o que acontece depois do lançamento?</span>
+                        <span class="faq-icon" aria-hidden="true">+</span>
+                    </button>
+                    <div class="faq-panel" id="faq-a5" role="region" aria-labelledby="faq-q5">
+                        <div class="faq-panel-content">
+                            <p>A LP no ar é o começo, não o fim. Por padrão, a gente acompanha as duas primeiras semanas de tráfego: setup de analytics, leitura de heatmap, ajustes finos. Se você quiser otimização contínua (testes A/B, iterações mensais), tem um plano separado pra isso.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ACCORDION ITEM 06 -->
+                <div class="faq-item">
+                    <div class="faq-divider-item"></div>
+                    <button class="faq-trigger" id="faq-q6" aria-expanded="false" aria-controls="faq-a6">
+                        <span class="faq-number">06</span>
+                        <span class="faq-question">vocês atendem fora do Brasil?</span>
+                        <span class="faq-icon" aria-hidden="true">+</span>
+                    </button>
+                    <div class="faq-panel" id="faq-a6" role="region" aria-labelledby="faq-q6">
+                        <div class="faq-panel-content">
+                            <p>Sim. Trabalhamos remotamente desde o primeiro dia.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Linha Divisória de Fechamento no Fundo -->
+                <div class="faq-divider-item"></div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Seção 9: CTA Final & Contato ( Fechamento do Documento ) -->
+    <section class="contact-section" id="contato">
+        <div class="contact-container">
+            <!-- Grade de Conteúdo (Assimétrica 55% / 45%) -->
+            <div class="contact-grid">
+                <!-- Coluna Esquerda: Headline & Info (~55%) -->
+                <div class="contact-column-left">
+                    <h2 class="contact-title" id="contactHeadline">
+                        MANDE <br>UM&nbsp;OLÁ
+                    </h2>
+                    <p class="contact-subheadline">
+                        Manda o briefing — ou só uma ideia.
+                    </p>
+                </div>
+                <!-- Coluna Direita: Formulário & Calendly (~45%) -->
+                <div class="contact-column-right" id="contactActionBlock">
+                    <!-- Bloco A: Formulário de Briefing -->
+                    <div class="form-block">
+                        <form class="briefing-form" id="briefingForm" action="https://formsubmit.co/marinanassergui@gmail.com" method="POST" novalidate>
+                            <div class="field-group">
+                                <label for="form-name" class="field-label">Nome</label>
+                                <input type="text" id="form-name" name="name" class="field-input" required>
+                                <span class="field-error-message" role="alert"></span>
+                            </div>
+
+                            <div class="field-group">
+                                <label for="form-whatsapp" class="field-label">WhatsApp</label>
+                                <input type="tel" id="form-whatsapp" name="whatsapp" class="field-input" required>
+                                <span class="field-error-message" role="alert"></span>
+                            </div>
+
+                            <div class="field-group">
+                                <label for="form-project" class="field-label">Empresa ou projeto</label>
+                                <input type="text" id="form-project" name="project" class="field-input" required>
+                                <span class="field-error-message" role="alert"></span>
+                            </div>
+
+                            <div class="field-group">
+                                <label for="form-objective" class="field-label">Objetivo do projeto</label>
+                                <textarea id="form-objective" name="objective" class="field-input textarea-input" required></textarea>
+                                <span class="field-error-message" role="alert"></span>
+                            </div>
+
+                            <button type="submit" class="btn-submit" id="submitBtn" data-hover="true">ENVIAR →</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GSAP & ScrollTrigger Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    
+    <!-- Custom Logic Script -->
+    <script src="script.js"></script>
+</body>
+</html>

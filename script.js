@@ -827,27 +827,17 @@ document.addEventListener('DOMContentLoaded', () => {
                             submitBtn.textContent = sendingText + '.'.repeat(dotsCount);
                         }, 250);
 
-                        // Prep FormSubmit AJAX payload
-                        const payload = {
-                            "Nome": form.querySelector('#form-name').value.trim(),
-                            "WhatsApp": form.querySelector('#form-whatsapp').value.trim(),
-                            "Empresa ou Projeto": form.querySelector('#form-project').value.trim(),
-                            "Objetivo do Projeto": form.querySelector('#form-objective').value.trim(),
-                            "_subject": currentLang === 'en' ? "New Contact — Mug Studio" : "Novo Contato — Mug Studio",
-                            "_captcha": "false",
-                            "_template": "box"
-                        };
+                        // Set dynamic subject in form hidden field
+                        const emailSubjectEl = document.getElementById('emailSubject');
+                        if (emailSubjectEl) {
+                            emailSubjectEl.value = currentLang === 'en' ? "New Contact — Mug Studio" : "Novo Contato — Mug Studio";
+                        }
 
-                        // Send via FormSubmit AJAX API
-                        fetch('https://formsubmit.co/ajax/hellomugstudio@gmail.com', {
-                            method: 'POST',
-                            headers: {
-                                'Content-Type': 'application/json',
-                                'Accept': 'application/json'
-                            },
-                            body: JSON.stringify(payload)
-                        })
-                        .then(response => {
+                        // Submit natively to the hidden iframe
+                        form.submit();
+
+                        // Stagger the success card DOM swap with a premium 800ms loading feedback delay
+                        setTimeout(() => {
                             clearInterval(dotsInterval);
                             
                             // Swap form block with custom success card
@@ -863,25 +853,7 @@ document.addEventListener('DOMContentLoaded', () => {
                                 `;
                                 setupCursorHovers();
                             }
-                        })
-                        .catch(error => {
-                            clearInterval(dotsInterval);
-                            console.error('Submission error:', error);
-                            
-                            // Fallback gracefully to keep UX premium and working even if offline
-                            const formBlock = contactSection.querySelector('.form-block');
-                            if (formBlock) {
-                                const successTitle = currentLang === 'en' ? 'Message received.' : 'Mensagem recebida.';
-                                const successSub = currentLang === 'en' ? "We'll respond soon. See you then." : "Vamos responder logo. Até lá.";
-                                formBlock.innerHTML = `
-                                    <div class="form-success-card">
-                                        <h3 class="success-title">${successTitle}</h3>
-                                        <p class="success-subheadline">${successSub}</p>
-                                    </div>
-                                `;
-                                setupCursorHovers();
-                            }
-                        });
+                        }, 800);
                     }
                 }
             });

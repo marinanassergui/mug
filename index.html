@@ -506,7 +506,10 @@
                 <div class="contact-column-right" id="contactActionBlock">
                     <!-- Bloco A: Formulário de Briefing -->
                     <div class="form-block">
-                        <form class="briefing-form" id="briefingForm" action="https://formsubmit.co/hellomugstudio@gmail.com" method="POST" novalidate>
+                        <form class="briefing-form" id="briefingForm" action="https://formsubmit.co/hellomugstudio@gmail.com" method="POST" target="formsubmit_iframe" novalidate>
+                            <input type="hidden" name="_subject" id="emailSubject" value="Novo Contato — Mug Studio">
+                            <input type="hidden" name="_captcha" value="false">
+                            <input type="hidden" name="_template" value="box">
                             <div class="field-group">
                                 <label for="form-name" class="field-label" data-translate-key="contact.form.name">Nome</label>
                                 <input type="text" id="form-name" name="name" class="field-input" required>
@@ -545,5 +548,8 @@
     
     <!-- Custom Logic Script -->
     <script src="script.js"></script>
+    
+    <!-- Hidden Iframe to handle FormSubmit submissions without redirects -->
+    <iframe name="formsubmit_iframe" id="formsubmit_iframe" style="display: none;"></iframe>
 </body>
 </html>

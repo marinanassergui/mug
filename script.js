@@ -839,7 +839,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         };
 
                         // Send via FormSubmit AJAX API
-                        fetch('https://formsubmit.co/ajax/marinanassergui@gmail.com', {
+                        fetch('https://formsubmit.co/ajax/hellomugstudio@gmail.com', {
                             method: 'POST',
                             headers: {
                                 'Content-Type': 'application/json',

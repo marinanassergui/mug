@@ -816,45 +816,11 @@ document.addEventListener('DOMContentLoaded', () => {
                     return;
                 }
 
-                // If form is valid, let native submission proceed to hidden iframe!
-                // But first, trigger our premium loading UI and DOM swap:
-                const submitBtn = document.getElementById('submitBtn');
-                if (submitBtn) {
-                    // Change state to ENVIANDO...
-                    submitBtn.disabled = true;
-                    submitBtn.style.pointerEvents = 'none';
-                    let dotsCount = 1;
-                    const sendingText = currentLang === 'en' ? 'SENDING' : 'ENVIANDO';
-                    submitBtn.textContent = sendingText + '.';
-
-                    const dotsInterval = setInterval(() => {
-                        dotsCount = (dotsCount % 3) + 1;
-                        submitBtn.textContent = sendingText + '.'.repeat(dotsCount);
-                    }, 250);
-
-                    // Set dynamic subject in form hidden field
-                    const emailSubjectEl = document.getElementById('emailSubject');
-                    if (emailSubjectEl) {
-                        emailSubjectEl.value = currentLang === 'en' ? "New Contact — Mug Studio" : "Novo Contato — Mug Studio";
-                    }
-
-                    // Swap form block with custom success card after 800ms loading stagger
-                    setTimeout(() => {
-                        clearInterval(dotsInterval);
-                        
-                        const formBlock = contactSection.querySelector('.form-block');
-                        if (formBlock) {
-                            const successTitle = currentLang === 'en' ? 'Message received.' : 'Mensagem recebida.';
-                            const successSub = currentLang === 'en' ? "We'll respond soon. See you then." : "Vamos responder logo. Até lá.";
-                            formBlock.innerHTML = `
-                                <div class="form-success-card">
-                                    <h3 class="success-title">${successTitle}</h3>
-                                    <p class="success-subheadline">${successSub}</p>
-                                </div>
-                            `;
-                            setupCursorHovers();
-                        }
-                    }, 800);
+                // Temporary direct native submit to FormSubmit for initial activation
+                // Set dynamic subject in form hidden field
+                const emailSubjectEl = document.getElementById('emailSubject');
+                if (emailSubjectEl) {
+                    emailSubjectEl.value = currentLang === 'en' ? "New Contact — Mug Studio" : "Novo Contato — Mug Studio";
                 }
             });
         }

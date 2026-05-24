@@ -659,10 +659,32 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // ---------------------------------------------------------
+    // 6. Generic Fold/Section Scroll Reveal Observer
+    // ---------------------------------------------------------
+    function setupFoldReveals() {
+        const folds = document.querySelectorAll('.reveal-fold');
+        if (folds.length === 0) return;
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-fold');
+                    observer.unobserve(entry.target); // Reveal exactly once
+                }
+            });
+        }, {
+            threshold: 0.12 // Trigger slightly early for immediate premium feedback
+        });
+
+        folds.forEach(fold => observer.observe(fold));
+    }
+
+    // ---------------------------------------------------------
     // 7. Execution Pipeline
     // ---------------------------------------------------------
     splitTextForReveal(headline);
     triggerEntranceAnimations();
+    setupFoldReveals(); // Activate generic fold reveals
     setupManifestoObserver(); // Activate observer for Seção 4
     setupGSAPScrollStack(); // Activate GSAP card stack parallax scroll
     setupCursorHovers(); // Hook elements up to the custom cursor

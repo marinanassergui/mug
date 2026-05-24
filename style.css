@@ -265,6 +265,20 @@ body {
     display: block;
 }
 
+/* Cohesive GPU-Accelerated Scroll Fold Reveals */
+.reveal-fold {
+    opacity: 0;
+    transform: translate3d(0, 50px, 0);
+    transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1), 
+                transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform;
+}
+
+.reveal-fold.animate-fold {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+}
+
 /* Mask Reveal Classes for Headline Words */
 .word-container {
     display: inline-block;
@@ -1142,6 +1156,9 @@ body {
     z-index: 30;
     padding: 180px 0;
     overflow: hidden;
+    /* Render Offloading Optimization */
+    content-visibility: auto;
+    contain-intrinsic-size: 500px;
 }
 
 .about-container {
@@ -1420,15 +1437,9 @@ body {
     z-index: 30;
     padding: 180px 0;
     overflow: hidden;
-    
-    /* Animation initial state */
-    opacity: 0;
-    transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-    will-change: opacity;
-}
-
-.faq-section.animate {
-    opacity: 1;
+    /* Render Offloading Optimization */
+    content-visibility: auto;
+    contain-intrinsic-size: 500px;
 }
 
 .faq-container {
@@ -1634,14 +1645,9 @@ body {
     padding: 220px 0;
     position: relative;
     z-index: 15;
-    /* Initial state for IntersectionObserver entrance */
-    opacity: 0;
-    transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-    will-change: opacity;
-}
-
-.contact-section.animate {
-    opacity: 1;
+    /* Render Offloading Optimization */
+    content-visibility: auto;
+    contain-intrinsic-size: 500px;
 }
 
 .contact-container {

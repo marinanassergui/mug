@@ -905,7 +905,7 @@ body {
 
 /* reveal animation state triggered via JS */
 .cases-list-item.animate .case-thumbnail-container {
-    clip-path: inset(0 0 0 0);
+    clip-path: inset(0 0 18px 0);
 }
 
 .cases-list-item.animate .case-info-block {

@@ -181,21 +181,43 @@ body {
     transform-origin: left;
 }
 
-.cta-nav {
-    font-size: 11px;
-    font-weight: 500;
-    text-transform: uppercase;
-    color: var(--color-black);
-    text-decoration: none;
-    letter-spacing: 0.15em;
-    border: 1px solid var(--color-black);
-    padding: 0.8rem 1.6rem;
-    transition: background-color var(--transition-fast), color var(--transition-fast);
+/* Language Switcher */
+.lang-switch {
+    display: flex;
+    align-items: center;
+    gap: 0.15rem;
 }
 
-.cta-nav:hover {
-    background-color: var(--color-black);
-    color: var(--color-white);
+.lang-btn {
+    background: none;
+    border: none;
+    padding: 0.5rem 0.7rem;
+    font-family: var(--font-primary);
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--color-black);
+    opacity: 0.35;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    transition: opacity var(--transition-fast), font-weight var(--transition-fast);
+}
+
+.lang-btn.active {
+    opacity: 1;
+    font-weight: 700;
+}
+
+.lang-btn:hover {
+    opacity: 0.85;
+}
+
+.lang-separator {
+    color: var(--color-black);
+    opacity: 0.25;
+    font-family: var(--font-primary);
+    font-size: 11px;
+    user-select: none;
 }
 
 .header-right {

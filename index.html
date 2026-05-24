@@ -26,12 +26,12 @@
             </button>
         </div>
         <nav class="mobile-nav">
-            <a href="#projetos" class="mobile-nav-link" data-hover="true">PROJETOS</a>
-            <a href="#processo" class="mobile-nav-link" data-hover="true">PROCESSO</a>
-            <a href="https://wa.me/5511945470712" target="_blank" rel="noopener noreferrer" class="mobile-nav-link" data-hover="true">CONTATO</a>
+            <a href="#projetos" class="mobile-nav-link" data-hover="true" data-translate-key="nav.projects">PROJETOS</a>
+            <a href="#processo" class="mobile-nav-link" data-hover="true" data-translate-key="nav.process">PROCESSO</a>
+            <a href="https://wa.me/5511945470712" target="_blank" rel="noopener noreferrer" class="mobile-nav-link" data-hover="true" data-translate-key="nav.contact">CONTATO</a>
         </nav>
         <div class="mobile-menu-footer">
-            <a href="https://wa.me/5511945470712" target="_blank" rel="noopener noreferrer" class="btn-primary mobile-cta" data-hover="true">INICIAR PROJETO ↗</a>
+            <a href="https://wa.me/5511945470712" target="_blank" rel="noopener noreferrer" class="btn-primary mobile-cta" data-hover="true" data-translate-key="hero.ctaPrimary">INICIAR PROJETO ↗</a>
         </div>
     </div>
 
@@ -43,13 +43,17 @@
             <a href="/" class="brand" data-hover="true">mug</a>
             
             <nav class="desktop-nav">
-                <a href="#projetos" class="nav-link" data-hover="true">PROJETOS</a>
-                <a href="#processo" class="nav-link" data-hover="true">PROCESSO</a>
-                <a href="https://wa.me/5511945470712" target="_blank" rel="noopener noreferrer" class="nav-link" data-hover="true">CONTATO</a>
+                <a href="#projetos" class="nav-link" data-hover="true" data-translate-key="nav.projects">PROJETOS</a>
+                <a href="#processo" class="nav-link" data-hover="true" data-translate-key="nav.process">PROCESSO</a>
+                <a href="https://wa.me/5511945470712" target="_blank" rel="noopener noreferrer" class="nav-link" data-hover="true" data-translate-key="nav.contact">CONTATO</a>
             </nav>
             
             <div class="header-right">
-                <a href="https://wa.me/5511945470712" target="_blank" rel="noopener noreferrer" class="cta-nav" data-hover="true">INICIAR PROJETO ↗</a>
+                <div class="lang-switch">
+                    <button class="lang-btn active" data-lang="pt" data-hover="true">PT</button>
+                    <span class="lang-separator">/</span>
+                    <button class="lang-btn" data-lang="en" data-hover="true">EN</button>
+                </div>
                 <button class="mobile-menu-btn" id="openMenuBtn" aria-label="Abrir menu">
                     <span class="hamburger-line"></span>
                     <span class="hamburger-line"></span>
@@ -59,7 +63,7 @@
 
         <!-- Zona Central: Headline and Impact -->
         <main class="hero-center">
-            <h1 class="headline" id="heroHeadline">
+            <h1 class="headline" id="heroHeadline" data-translate-key="hero.title">
                 DESIGN NÃO <br>É ENFEITE.<br>É ALAVANCA.
             </h1>
         </main>
@@ -68,14 +72,14 @@
         <footer class="hero-bottom">
             <div class="footer-grid">
                 <div class="footer-left">
-                    <p class="subheadline">
+                    <p class="subheadline" data-translate-key="hero.subtitle">
                         Um studio para founders que tratam a landing page como produto, não como panfleto. Design orientado a conversão, estratégia antes do pixel, zero template.
                     </p>
                 </div>
                 <div class="footer-right">
                     <div class="cta-group">
-                        <a href="https://wa.me/5511945470712" target="_blank" rel="noopener noreferrer" class="btn-primary" data-hover="true">INICIAR PROJETO ↗</a>
-                        <a href="#projetos" class="btn-secondary" data-hover="true">VER PROJETOS →</a>
+                        <a href="https://wa.me/5511945470712" target="_blank" rel="noopener noreferrer" class="btn-primary" data-hover="true" data-translate-key="hero.ctaPrimary">INICIAR PROJETO ↗</a>
+                        <a href="#projetos" class="btn-secondary" data-hover="true" data-translate-key="hero.ctaSecondary">VER PROJETOS →</a>
                     </div>
                 </div>
             </div>
@@ -83,7 +87,7 @@
             <!-- Bottom Detail Bar -->
             <div class="bottom-bar">
                 <div class="scroll-indicator">
-                    <span class="scroll-text">ROLAR</span>
+                    <span class="scroll-text" data-translate-key="hero.scrollText">ROLAR</span>
                     <svg class="scroll-arrow" width="10" height="12" viewBox="0 0 10 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M5 0V11M5 11L1 7M5 11L9 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
@@ -99,7 +103,7 @@
             
             <!-- Single Column Manifesto copy in 48px -->
             <div class="manifesto-content-block">
-                <h2 class="manifesto-text" id="manifestoText">
+                <h2 class="manifesto-text" id="manifestoText" data-translate-key="manifesto.text">
                     Uma landing page é uma decisão. A nossa faz seu cliente decidir +86% mais rápido.
                 </h2>
             </div>
@@ -115,10 +119,10 @@
             <header class="cases-header">
                 <div class="cases-header-grid">
                     <div class="cases-header-left">
-                        <h2 class="cases-title">PROJETOS RECENTES.</h2>
+                        <h2 class="cases-title" data-translate-key="cases.title">PROJETOS RECENTES.</h2>
                     </div>
                     <div class="cases-header-right">
-                        <p class="cases-description">
+                        <p class="cases-description" data-translate-key="cases.description">
                             Cada projeto começa numa pergunta diferente. O que se repete é o método.
                         </p>
                     </div>
@@ -136,10 +140,10 @@
                         </div>
                     </div>
                     <div class="case-info-block">
-                        <div class="case-info-number">CASE 01 / 03</div>
+                        <div class="case-info-number" data-translate-key="cases.c1.number">CASE 01 / 03</div>
                         <h3 class="case-info-name">Compass</h3>
-                        <p class="case-info-segment">landing page para um aplicativo financeiro</p>
-                        <span class="case-info-cta">ABRIR CASE ↗</span>
+                        <p class="case-info-segment" data-translate-key="cases.c1.segment">landing page para um aplicativo financeiro</p>
+                        <span class="case-info-cta" data-translate-key="cases.c1.cta">ABRIR CASE ↗</span>
                     </div>
                 </a>
 
@@ -151,10 +155,10 @@
                         </div>
                     </div>
                     <div class="case-info-block">
-                        <div class="case-info-number">CASE 02 / 03</div>
+                        <div class="case-info-number" data-translate-key="cases.c2.number">CASE 02 / 03</div>
                         <h3 class="case-info-name">Rota</h3>
-                        <p class="case-info-segment">landing page para um SaaS de logística</p>
-                        <span class="case-info-cta">ABRIR CASE ↗</span>
+                        <p class="case-info-segment" data-translate-key="cases.c2.segment">landing page para um SaaS de logística</p>
+                        <span class="case-info-cta" data-translate-key="cases.c2.cta">ABRIR CASE ↗</span>
                     </div>
                 </a>
 
@@ -166,10 +170,10 @@
                         </div>
                     </div>
                     <div class="case-info-block">
-                        <div class="case-info-number">CASE 03 / 03</div>
+                        <div class="case-info-number" data-translate-key="cases.c3.number">CASE 03 / 03</div>
                         <h3 class="case-info-name">Barro</h3>
-                        <p class="case-info-segment">landing page para um ateliê de cerâmica artesanal</p>
-                        <span class="case-info-cta">ABRIR CASE ↗</span>
+                        <p class="case-info-segment" data-translate-key="cases.c3.segment">landing page para um ateliê de cerâmica artesanal</p>
+                        <span class="case-info-cta" data-translate-key="cases.c3.cta">ABRIR CASE ↗</span>
                     </div>
                 </a>
 
@@ -188,10 +192,10 @@
             <header class="process-header">
                 <div class="process-header-grid">
                     <div class="process-header-left">
-                        <h2 class="process-title">COMO A GENTE TRABALHA.</h2>
+                        <h2 class="process-title" data-translate-key="process.title">COMO A GENTE TRABALHA.</h2>
                     </div>
                     <div class="process-header-right">
-                        <p class="process-description">
+                        <p class="process-description" data-translate-key="process.description">
                             Cinco etapas. Sem mistério. Cada uma existe por um motivo.
                         </p>
                     </div>
@@ -213,7 +217,7 @@
                         <div class="process-marker"></div>
                         <div class="process-step-content">
                             <span class="process-step-mob-number">01</span>
-                            <h3 class="process-step-name">DISCOVERY<br>& ESTRATÉGIA</h3>
+                            <h3 class="process-step-name" data-translate-key="process.step1">DISCOVERY<br>& ESTRATÉGIA</h3>
                         </div>
                     </div>
 
@@ -223,7 +227,7 @@
                         <div class="process-marker"></div>
                         <div class="process-step-content">
                             <span class="process-step-mob-number">02</span>
-                            <h3 class="process-step-name">WIREFRAME<br>& COPY</h3>
+                            <h3 class="process-step-name" data-translate-key="process.step2">WIREFRAME<br>& COPY</h3>
                         </div>
                     </div>
 
@@ -233,7 +237,7 @@
                         <div class="process-marker"></div>
                         <div class="process-step-content">
                             <span class="process-step-mob-number">03</span>
-                            <h3 class="process-step-name">DESIGN<br>& PROTÓTIPO</h3>
+                            <h3 class="process-step-name" data-translate-key="process.step3">DESIGN<br>& PROTÓTIPO</h3>
                         </div>
                     </div>
 
@@ -243,7 +247,7 @@
                         <div class="process-marker"></div>
                         <div class="process-step-content">
                             <span class="process-step-mob-number">04</span>
-                            <h3 class="process-step-name">HANDOFF<br>& IMPLEMENTAÇÃO</h3>
+                            <h3 class="process-step-name" data-translate-key="process.step4">HANDOFF<br>& IMPLEMENTAÇÃO</h3>
                         </div>
                     </div>
 
@@ -253,7 +257,7 @@
                         <div class="process-marker"></div>
                         <div class="process-step-content">
                             <span class="process-step-mob-number">05</span>
-                            <h3 class="process-step-name">OTIMIZAÇÃO<br>PÓS-LANÇAMENTO</h3>
+                            <h3 class="process-step-name" data-translate-key="process.step5">OTIMIZAÇÃO<br>PÓS-LANÇAMENTO</h3>
                         </div>
                     </div>
 
@@ -263,7 +267,7 @@
 
             <!-- Faixa Inferior (Rodapé da Seção) -->
             <footer class="process-footer">
-                <a href="https://wa.me/5511945470712" target="_blank" rel="noopener noreferrer" class="process-footer-cta" data-hover="true">INICIAR UM PROJETO →</a>
+                <a href="https://wa.me/5511945470712" target="_blank" rel="noopener noreferrer" class="process-footer-cta" data-hover="true" data-translate-key="process.cta">INICIAR UM PROJETO →</a>
             </footer>
 
         </div>
@@ -277,10 +281,10 @@
             <header class="about-header">
                 <div class="about-header-grid">
                     <div class="about-header-left">
-                        <h2 class="about-title">O QUE NOS DEFINE.</h2>
+                        <h2 class="about-title" data-translate-key="about.title">O QUE NOS DEFINE.</h2>
                     </div>
                     <div class="about-header-right">
-                        <p class="about-description">
+                        <p class="about-description" data-translate-key="about.description">
                             Não é manifesto, é método. O que está aqui está em cada projeto que sai do studio.
                         </p>
                     </div>
@@ -300,8 +304,8 @@
                         </svg>
                     </div>
                     <span class="about-pilar-number">01</span>
-                    <h3 class="about-pilar-title">primeiro estratégia.</h3>
-                    <p class="about-pilar-phrase">
+                    <h3 class="about-pilar-title" data-translate-key="about.p1.title">primeiro estratégia.</h3>
+                    <p class="about-pilar-phrase" data-translate-key="about.p1.phrase">
                         A gente não abre o Figma sem entender o problema. Design sem hipótese é decoração cara.
                     </p>
                 </div>
@@ -318,8 +322,8 @@
                         </svg>
                     </div>
                     <span class="about-pilar-number">02</span>
-                    <h3 class="about-pilar-title">copy é parte do design.</h3>
-                    <p class="about-pilar-phrase">
+                    <h3 class="about-pilar-title" data-translate-key="about.p2.title">copy é parte do design.</h3>
+                    <p class="about-pilar-phrase" data-translate-key="about.p2.phrase">
                         Texto e layout nascem juntos. Não terceirizamos a mensagem — ela é metade do produto.
                     </p>
                 </div>
@@ -334,8 +338,8 @@
                         </svg>
                     </div>
                     <span class="about-pilar-number">03</span>
-                    <h3 class="about-pilar-title">foco em conversão.</h3>
-                    <p class="about-pilar-phrase">
+                    <h3 class="about-pilar-title" data-translate-key="about.p3.title">foco em conversão.</h3>
+                    <p class="about-pilar-phrase" data-translate-key="about.p3.phrase">
                         O trabalho serve à métrica do cliente. Se ficar bonito no caminho, melhor — mas a régua é outra.
                     </p>
                 </div>
@@ -351,8 +355,8 @@
                         </svg>
                     </div>
                     <span class="about-pilar-number">04</span>
-                    <h3 class="about-pilar-title">independente por escolha.</h3>
-                    <p class="about-pilar-phrase">
+                    <h3 class="about-pilar-title" data-translate-key="about.p4.title">independente por escolha.</h3>
+                    <p class="about-pilar-phrase" data-translate-key="about.p4.phrase">
                         Studio pequeno, time enxuto, conversa direta. Sem account, sem PowerPoint, sem intermediário.
                     </p>
                 </div>
@@ -372,13 +376,13 @@
             <header class="faq-header">
                 <div class="faq-header-grid">
                     <div class="faq-header-left">
-                        <h2 class="faq-title">FAQ.</h2>
+                        <h2 class="faq-title" data-translate-key="faq.title">FAQ.</h2>
                     </div>
                     <div class="faq-header-right">
-                        <p class="faq-description">
+                        <p class="faq-description" data-translate-key="faq.description">
                             Se a sua não está aqui, manda direto. A gente responde rápido — e sem rodeio.
                         </p>
-                        <a href="https://wa.me/5511945470712" target="_blank" rel="noopener noreferrer" class="faq-header-cta" data-hover="true">FALAR COM A GENTE ↗</a>
+                        <a href="https://wa.me/5511945470712" target="_blank" rel="noopener noreferrer" class="faq-header-cta" data-hover="true" data-translate-key="faq.cta">FALAR COM A GENTE ↗</a>
                     </div>
                 </div>
             </header>
@@ -391,12 +395,12 @@
                     <div class="faq-divider-item"></div>
                     <button class="faq-trigger" id="faq-q1" aria-expanded="false" aria-controls="faq-a1">
                         <span class="faq-number">01</span>
-                        <span class="faq-question">quanto tempo leva pra entregar uma lp?</span>
+                        <span class="faq-question" data-translate-key="faq.q1.question">quanto tempo leva pra entregar uma lp?</span>
                         <span class="faq-icon" aria-hidden="true">+</span>
                     </button>
                     <div class="faq-panel" id="faq-a1" role="region" aria-labelledby="faq-q1">
                         <div class="faq-panel-content">
-                            <p>O prazo padrão é de 7 dias, do briefing à publicação. Pode variar pra mais ou pra menos dependendo do escopo, mas a gente nunca começa um projeto sem cravar a data antes.</p>
+                            <p data-translate-key="faq.q1.answer">O prazo padrão é de 7 dias, do briefing à publicação. Pode variar pra mais ou pra menos dependendo do escopo, mas a gente nunca começa um projeto sem cravar a data antes.</p>
                         </div>
                     </div>
                 </div>
@@ -406,12 +410,12 @@
                     <div class="faq-divider-item"></div>
                     <button class="faq-trigger" id="faq-q2" aria-expanded="false" aria-controls="faq-a2">
                         <span class="faq-number">02</span>
-                        <span class="faq-question">quanto custa um projeto?</span>
+                        <span class="faq-question" data-translate-key="faq.q2.question">quanto custa um projeto?</span>
                         <span class="faq-icon" aria-hidden="true">+</span>
                     </button>
                     <div class="faq-panel" id="faq-a2" role="region" aria-labelledby="faq-q2">
                         <div class="faq-panel-content">
-                            <p>Não trabalhamos com tabela fixa porque cada projeto tem um escopo diferente — uma LP de lançamento não é o mesmo que um site de venda contínua.</p>
+                            <p data-translate-key="faq.q2.answer">Não trabalhamos com tabela fixa porque cada projeto tem um escopo diferente — uma LP de lançamento não é o mesmo que um site de venda contínua.</p>
                         </div>
                     </div>
                 </div>
@@ -421,12 +425,12 @@
                     <div class="faq-divider-item"></div>
                     <button class="faq-trigger" id="faq-q3" aria-expanded="false" aria-controls="faq-a3">
                         <span class="faq-number">03</span>
-                        <span class="faq-question">vocês escrevem a copy ou eu preciso trazer?</span>
+                        <span class="faq-question" data-translate-key="faq.q3.question">vocês escrevem a copy ou eu preciso trazer?</span>
                         <span class="faq-icon" aria-hidden="true">+</span>
                     </button>
                     <div class="faq-panel" id="faq-a3" role="region" aria-labelledby="faq-q3">
                         <div class="faq-panel-content">
-                            <p>A copy faz parte do trabalho. A gente desenvolve mensagem e estrutura junto. Se você já tem material aprovado, ótimo: a gente refina e adapta. Mas o ponto é que texto e design nascem juntos aqui.</p>
+                            <p data-translate-key="faq.q3.answer">A copy faz parte do trabalho. A gente desenvolve mensagem e estrutura junto. Se você já tem material aprovado, ótimo: a gente refina e adapta. Mas o ponto é que texto e design nascem juntos aqui.</p>
                         </div>
                     </div>
                 </div>
@@ -436,12 +440,12 @@
                     <div class="faq-divider-item"></div>
                     <button class="faq-trigger" id="faq-q4" aria-expanded="false" aria-controls="faq-a4">
                         <span class="faq-number">04</span>
-                        <span class="faq-question">vocês entregam só o design ou implementam também?</span>
+                        <span class="faq-question" data-translate-key="faq.q4.question">vocês entregam só o design ou implementam também?</span>
                         <span class="faq-icon" aria-hidden="true">+</span>
                     </button>
                     <div class="faq-panel" id="faq-a4" role="region" aria-labelledby="faq-q4">
                         <div class="faq-panel-content">
-                            <p>Os dois. A gente entrega o design e a implementação completa. Não tem custo escondido de "fase 2".</p>
+                            <p data-translate-key="faq.q4.answer">Os dois. A gente entrega o design e a implementação completa. Não tem custo escondido de "fase 2".</p>
                         </div>
                     </div>
                 </div>
@@ -451,12 +455,12 @@
                     <div class="faq-divider-item"></div>
                     <button class="faq-trigger" id="faq-q5" aria-expanded="false" aria-controls="faq-a5">
                         <span class="faq-number">05</span>
-                        <span class="faq-question">o que acontece depois do lançamento?</span>
+                        <span class="faq-question" data-translate-key="faq.q5.question">o que acontece depois do lançamento?</span>
                         <span class="faq-icon" aria-hidden="true">+</span>
                     </button>
                     <div class="faq-panel" id="faq-a5" role="region" aria-labelledby="faq-q5">
                         <div class="faq-panel-content">
-                            <p>A LP no ar é o começo, não o fim. Por padrão, a gente acompanha as duas primeiras semanas de tráfego: setup de analytics, leitura de heatmap, ajustes finos. Se você quiser otimização contínua (testes A/B, iterações mensais), tem um plano separado pra isso.</p>
+                            <p data-translate-key="faq.q5.answer">A LP no ar é o começo, não o fim. Por padrão, a gente acompanha as duas primeiras semanas de tráfego: setup de analytics, leitura de heatmap, ajustes finos. Se você quiser otimização contínua (testes A/B, iterações mensais), tem um plano separado pra isso.</p>
                         </div>
                     </div>
                 </div>
@@ -466,12 +470,12 @@
                     <div class="faq-divider-item"></div>
                     <button class="faq-trigger" id="faq-q6" aria-expanded="false" aria-controls="faq-a6">
                         <span class="faq-number">06</span>
-                        <span class="faq-question">vocês atendem fora do Brasil?</span>
+                        <span class="faq-question" data-translate-key="faq.q6.question">vocês atendem fora do Brasil?</span>
                         <span class="faq-icon" aria-hidden="true">+</span>
                     </button>
                     <div class="faq-panel" id="faq-a6" role="region" aria-labelledby="faq-q6">
                         <div class="faq-panel-content">
-                            <p>Sim. Trabalhamos remotamente desde o primeiro dia.</p>
+                            <p data-translate-key="faq.q6.answer">Sim. Trabalhamos remotamente desde o primeiro dia.</p>
                         </div>
                     </div>
                 </div>
@@ -491,10 +495,10 @@
             <div class="contact-grid">
                 <!-- Coluna Esquerda: Headline & Info (~55%) -->
                 <div class="contact-column-left">
-                    <h2 class="contact-title" id="contactHeadline">
+                    <h2 class="contact-title" id="contactHeadline" data-translate-key="contact.title">
                         MANDE <br>UM&nbsp;OLÁ
                     </h2>
-                    <p class="contact-subheadline">
+                    <p class="contact-subheadline" data-translate-key="contact.subtitle">
                         Manda o briefing — ou só uma ideia.
                     </p>
                 </div>
@@ -504,30 +508,30 @@
                     <div class="form-block">
                         <form class="briefing-form" id="briefingForm" action="https://formsubmit.co/marinanassergui@gmail.com" method="POST" novalidate>
                             <div class="field-group">
-                                <label for="form-name" class="field-label">Nome</label>
+                                <label for="form-name" class="field-label" data-translate-key="contact.form.name">Nome</label>
                                 <input type="text" id="form-name" name="name" class="field-input" required>
                                 <span class="field-error-message" role="alert"></span>
                             </div>
 
                             <div class="field-group">
-                                <label for="form-whatsapp" class="field-label">WhatsApp</label>
+                                <label for="form-whatsapp" class="field-label" data-translate-key="contact.form.whatsapp">WhatsApp</label>
                                 <input type="tel" id="form-whatsapp" name="whatsapp" class="field-input" required>
                                 <span class="field-error-message" role="alert"></span>
                             </div>
 
                             <div class="field-group">
-                                <label for="form-project" class="field-label">Empresa ou projeto</label>
+                                <label for="form-project" class="field-label" data-translate-key="contact.form.project">Empresa ou projeto</label>
                                 <input type="text" id="form-project" name="project" class="field-input" required>
                                 <span class="field-error-message" role="alert"></span>
                             </div>
 
                             <div class="field-group">
-                                <label for="form-objective" class="field-label">Objetivo do projeto</label>
+                                <label for="form-objective" class="field-label" data-translate-key="contact.form.objective">Objetivo do projeto</label>
                                 <textarea id="form-objective" name="objective" class="field-input textarea-input" required></textarea>
                                 <span class="field-error-message" role="alert"></span>
                             </div>
 
-                            <button type="submit" class="btn-submit" id="submitBtn" data-hover="true">ENVIAR →</button>
+                            <button type="submit" class="btn-submit" id="submitBtn" data-hover="true" data-translate-key="contact.form.submit">ENVIAR →</button>
                         </form>
                     </div>
                 </div>

@@ -16,6 +16,230 @@ document.addEventListener('DOMContentLoaded', () => {
     const mobileMenu = document.getElementById('mobileMenu');
     const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
 
+    let manifestoHasAnimated = false;
+    let currentLang = localStorage.getItem('mug-lang') || 'pt';
+
+    // ---------------------------------------------------------
+    // Translations Dictionary & Switcher Engine
+    // ---------------------------------------------------------
+    const translations = {
+        pt: {
+            "nav.projects": "PROJETOS",
+            "nav.process": "PROCESSO",
+            "nav.contact": "CONTATO",
+            "hero.ctaPrimary": "INICIAR PROJETO ↗",
+            "hero.ctaSecondary": "VER PROJETOS →",
+            "hero.title": "DESIGN NÃO <br>É ENFEITE.<br>É ALAVANCA.",
+            "hero.subtitle": "Um studio para founders que tratam a landing page como produto, não como panfleto. Design orientado a conversão, estratégia antes do pixel, zero template.",
+            "hero.scrollText": "ROLAR",
+            "manifesto.text": "Uma landing page é uma decisão. A nossa faz seu cliente decidir +86% mais rápido.",
+            "cases.title": "PROJETOS RECENTES.",
+            "cases.description": "Cada projeto começa numa pergunta diferente. O que se repete é o método.",
+            "cases.c1.number": "CASE 01 / 03",
+            "cases.c1.segment": "landing page para um aplicativo financeiro",
+            "cases.c1.cta": "ABRIR CASE ↗",
+            "cases.c2.number": "CASE 02 / 03",
+            "cases.c2.segment": "landing page para um SaaS de logística",
+            "cases.c2.cta": "ABRIR CASE ↗",
+            "cases.c3.number": "CASE 03 / 03",
+            "cases.c3.segment": "landing page para um ateliê de cerâmica artesanal",
+            "cases.c3.cta": "ABRIR CASE ↗",
+            "process.title": "COMO A GENTE TRABALHA.",
+            "process.description": "Cinco etapas. Sem mistério. Cada uma existe por um motivo.",
+            "process.step1": "DISCOVERY<br>& ESTRATÉGIA",
+            "process.step2": "WIREFRAME<br>& COPY",
+            "process.step3": "DESIGN<br>& PROTÓTIPO",
+            "process.step4": "HANDOFF<br>& IMPLEMENTAÇÃO",
+            "process.step5": "OTIMIZAÇÃO<br>PÓS-LANÇAMENTO",
+            "process.cta": "INICIAR UM PROJETO →",
+            "about.title": "O QUE NOS DEFINE.",
+            "about.description": "Não é manifesto, é método. O que está aqui está em cada projeto que sai do studio.",
+            "about.p1.title": "primeiro estratégia.",
+            "about.p1.phrase": "A gente não abre o Figma sem entender o problema. Design sem hipótese é decoração cara.",
+            "about.p2.title": "copy é parte do design.",
+            "about.p2.phrase": "Texto e layout nascem juntos. Não terceirizamos a mensagem — ela é metade do produto.",
+            "about.p3.title": "foco em conversão.",
+            "about.p3.phrase": "O trabalho serve à métrica do cliente. Se ficar bonito no caminho, melhor — mas a régua é outra.",
+            "about.p4.title": "independente por escolha.",
+            "about.p4.phrase": "Studio pequeno, time enxuto, conversa direta. Sem account, sem PowerPoint, sem intermediário.",
+            "faq.title": "FAQ.",
+            "faq.description": "Se a sua não está aqui, manda direto. A gente responde rápido — e sem rodeio.",
+            "faq.cta": "FALAR COM A GENTE ↗",
+            "faq.q1.question": "quanto tempo leva pra entregar uma lp?",
+            "faq.q1.answer": "O prazo padrão é de 7 dias, do briefing à publicação. Pode variar pra mais ou pra menos dependendo do escopo, mas a gente nunca começa um projeto sem cravar a data antes.",
+            "faq.q2.question": "quanto custa um projeto?",
+            "faq.q2.answer": "Não trabalhamos com tabela fixa porque cada projeto tem um escopo diferente — uma LP de lançamento não é o mesmo que um site de venda contínua.",
+            "faq.q3.question": "vocês escrevem a copy ou eu preciso trazer?",
+            "faq.q3.answer": "A copy faz parte do trabalho. A gente desenvolve mensagem e estrutura junto. Se você já tem material aprovado, ótimo: a gente refina e adapta. Mas o ponto é que texto e design nascem juntos aqui.",
+            "faq.q4.question": "vocês entregam só o design ou implementam também?",
+            "faq.q4.answer": "Os dois. A gente entrega o design e a implementação completa. Não tem custo escondido de \"fase 2\".",
+            "faq.q5.question": "o que acontece depois do lançamento?",
+            "faq.q5.answer": "A LP no ar é o começo, não o fim. Por padrão, a gente acompanha as duas primeiras semanas de tráfego: setup de analytics, leitura de heatmap, ajustes finos. Se você quiser otimização contínua (testes A/B, iterações mensais), tem um plano separado pra isso.",
+            "faq.q6.question": "vocês atendem fora do Brasil?",
+            "faq.q6.answer": "Sim. Trabalhamos remotamente desde o primeiro dia.",
+            "contact.title": "MANDE <br>UM&nbsp;OLÁ",
+            "contact.subtitle": "Manda o briefing — ou só uma ideia.",
+            "contact.form.name": "Nome",
+            "contact.form.whatsapp": "WhatsApp",
+            "contact.form.project": "Empresa ou projeto",
+            "contact.form.objective": "Objetivo do projeto",
+            "contact.form.submit": "ENVIAR →"
+        },
+        en: {
+            "nav.projects": "PROJECTS",
+            "nav.process": "PROCESS",
+            "nav.contact": "CONTACT",
+            "hero.ctaPrimary": "START PROJECT ↗",
+            "hero.ctaSecondary": "VIEW PROJECTS →",
+            "hero.title": "DESIGN IS NOT <br>ORNAMENT.<br>IT'S LEVERAGE.",
+            "hero.subtitle": "A studio for founders who treat landing pages as products, not flyers. Conversion-focused design, strategy before pixels, zero templates.",
+            "hero.scrollText": "SCROLL",
+            "manifesto.text": "A landing page is a decision. Ours makes your client decide +86% faster.",
+            "cases.title": "RECENT PROJECTS.",
+            "cases.description": "Every project starts with a different question. What repeats is the method.",
+            "cases.c1.number": "CASE 01 / 03",
+            "cases.c1.segment": "landing page for a financial application",
+            "cases.c1.cta": "OPEN CASE ↗",
+            "cases.c2.number": "CASE 02 / 03",
+            "cases.c2.segment": "landing page for a logistics SaaS",
+            "cases.c2.cta": "OPEN CASE ↗",
+            "cases.c3.number": "CASE 03 / 03",
+            "cases.c3.segment": "landing page for an artisan ceramic studio",
+            "cases.c3.cta": "OPEN CASE ↗",
+            "process.title": "HOW WE WORK.",
+            "process.description": "Five stages. No mystery. Each one exists for a reason.",
+            "process.step1": "DISCOVERY<br>& STRATEGY",
+            "process.step2": "WIREFRAME<br>& COPY",
+            "process.step3": "DESIGN<br>& PROTOTYPE",
+            "process.step4": "HANDOFF<br>& IMPLEMENTATION",
+            "process.step5": "POST-LAUNCH<br>OPTIMIZATION",
+            "process.cta": "START A PROJECT →",
+            "about.title": "WHAT DEFINES US.",
+            "about.description": "Not a manifesto, a method. What is here is in every project that leaves the studio.",
+            "about.p1.title": "strategy first.",
+            "about.p1.phrase": "We don't open Figma without understanding the problem. Design without hypotheses is expensive decoration.",
+            "about.p2.title": "copy is part of design.",
+            "about.p2.phrase": "Copy and layout are born together. We don't outsource the message — it is half of the product.",
+            "about.p3.title": "focus on conversion.",
+            "about.p3.phrase": "The work serves the client's metrics. If it gets beautiful along the way, great — but the bar is different.",
+            "about.p4.title": "independent by choice.",
+            "about.p4.phrase": "Small studio, lean team, direct conversation. No accounts, no PowerPoint, no middleman.",
+            "faq.title": "FAQ.",
+            "faq.description": "If yours isn't here, send it directly. We answer fast — and straight to the point.",
+            "faq.cta": "TALK TO US ↗",
+            "faq.q1.question": "how long does it take to deliver an lp?",
+            "faq.q1.answer": "Our standard timeline is 7 days, from briefing to launch. It may vary based on scope, but we never start a project without setting the date first.",
+            "faq.q2.question": "how much does a project cost?",
+            "faq.q2.answer": "We don't work with fixed pricing because every project has a different scope — a launch LP is not the same as a continuous sales site.",
+            "faq.q3.question": "do you write the copy or do I need to bring it?",
+            "faq.q3.answer": "Copy is part of the job. We develop the message and structure together. If you already have approved copy, great: we refine and adapt it. But the point is that copy and design are born together here.",
+            "faq.q4.question": "do you only deliver the design or implement it as well?",
+            "faq.q4.answer": "Both. We deliver the design and the complete implementation. There is no hidden cost of a \"phase 2\".",
+            "faq.q5.question": "what happens after the launch?",
+            "faq.q5.answer": "The LP live is the beginning, not the end. By default, we track the first two weeks of traffic: analytics setup, heatmap tracking, fine-tuning. If you want continuous optimization (A/B testing, monthly iterations), there is a separate plan for that.",
+            "faq.q6.question": "do you serve clients outside Brazil?",
+            "faq.q6.answer": "Yes. We have worked remotely since day one.",
+            "contact.title": "SAY <br>HELLO",
+            "contact.subtitle": "Send the briefing — or just an idea.",
+            "contact.form.name": "Name",
+            "contact.form.whatsapp": "WhatsApp",
+            "contact.form.project": "Company or project",
+            "contact.form.objective": "Project goal",
+            "contact.form.submit": "SEND →"
+        }
+    };
+
+    function updateLanguage(lang, isInitialLoad = false) {
+        currentLang = lang;
+        localStorage.setItem('mug-lang', lang);
+
+        // Update active class on buttons
+        const langBtns = document.querySelectorAll('.lang-btn');
+        langBtns.forEach(btn => {
+            if (btn.getAttribute('data-lang') === lang) {
+                btn.classList.add('active');
+            } else {
+                btn.classList.remove('active');
+            }
+        });
+
+        // Translate all data-translate-key elements
+        const elements = document.querySelectorAll('[data-translate-key]');
+        elements.forEach(el => {
+            const key = el.getAttribute('data-translate-key');
+            if (translations[lang] && translations[lang][key]) {
+                const translationText = translations[lang][key];
+
+                if (el.id === 'heroHeadline' || el.id === 'manifestoText' || el.id === 'contactHeadline') {
+                    el.innerHTML = translationText;
+                } else if (el.tagName.toLowerCase() === 'input' || el.tagName.toLowerCase() === 'textarea') {
+                    el.placeholder = translationText;
+                } else {
+                    el.innerHTML = translationText;
+                }
+            }
+        });
+
+        // Re-split and animate reveal elements only on live toggle clicks (not initial load)
+        if (!isInitialLoad) {
+            // 1. Hero Headline
+            splitTextForReveal(headline);
+            const heroWords = headline.querySelectorAll('.word-reveal');
+            heroWords.forEach((word, idx) => {
+                word.style.transitionDelay = `${idx * 40}ms`;
+                requestAnimationFrame(() => word.classList.add('animate'));
+            });
+
+            // 2. Manifesto Text
+            const manifestoTextEl = document.getElementById('manifestoText');
+            splitTextForReveal(manifestoTextEl);
+            if (manifestoHasAnimated) {
+                const manifestoWords = manifestoTextEl.querySelectorAll('.word-reveal');
+                manifestoWords.forEach((word) => {
+                    word.classList.add('animate');
+                });
+            }
+
+            // 3. Contact Headline
+            const contactSection = document.getElementById('contato');
+            const contactHeadlineEl = document.getElementById('contactHeadline');
+            splitTextForReveal(contactHeadlineEl);
+            if (contactSection && contactSection.classList.contains('animate')) {
+                const contactWords = contactHeadlineEl.querySelectorAll('.word-reveal');
+                contactWords.forEach((word) => {
+                    word.classList.add('animate');
+                });
+            }
+            
+            // Re-run form labels floating height check
+            const formFields = document.querySelectorAll('.field-input');
+            formFields.forEach(input => {
+                const group = input.closest('.field-group');
+                if (group) {
+                    if (input.value.trim() !== '') {
+                        group.classList.add('has-value');
+                    } else {
+                        group.classList.remove('has-value');
+                    }
+                }
+            });
+
+            // Re-setup custom cursor hovers to capture newly translated links/buttons
+            setupCursorHovers();
+        }
+    }
+
+    const langBtns = document.querySelectorAll('.lang-btn');
+    langBtns.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            const lang = btn.getAttribute('data-lang');
+            if (lang !== currentLang) {
+                updateLanguage(lang, false);
+            }
+        });
+    });
+
     // ---------------------------------------------------------
     // 2. Custom Cursor Core Logic
     // ---------------------------------------------------------
@@ -224,6 +448,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
+                    manifestoHasAnimated = true;
                     // Animate Manifesto Text (stagger word-by-word at 60ms)
                     const words = manifestoText.querySelectorAll('.word-reveal');
                     words.forEach((word, idx) => {
@@ -322,7 +547,7 @@ document.addEventListener('DOMContentLoaded', () => {
         thumbnailContainers.forEach(container => {
             container.addEventListener('mouseenter', () => {
                 cursor.classList.add('thumbnail-active');
-                cursor.innerHTML = '<span>VER PROJETO →</span>';
+                cursor.innerHTML = `<span>${currentLang === 'en' ? 'VIEW PROJECT →' : 'VER PROJETO →'}</span>`;
             });
             container.addEventListener('mouseleave', () => {
                 cursor.classList.remove('thumbnail-active');
@@ -580,7 +805,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     if (input.value.trim() === '') {
                         isFormValid = false;
                         group.classList.add('has-error');
-                        errorMsg.textContent = 'Campo obrigatório.';
+                        errorMsg.textContent = currentLang === 'en' ? 'Required field.' : 'Campo obrigatório.';
                     } else {
                         group.classList.remove('has-error');
                         errorMsg.textContent = '';
@@ -594,11 +819,12 @@ document.addEventListener('DOMContentLoaded', () => {
                         submitBtn.disabled = true;
                         submitBtn.style.pointerEvents = 'none';
                         let dotsCount = 1;
-                        submitBtn.textContent = 'ENVIANDO.';
+                        const sendingText = currentLang === 'en' ? 'SENDING' : 'ENVIANDO';
+                        submitBtn.textContent = sendingText + '.';
 
                         const dotsInterval = setInterval(() => {
                             dotsCount = (dotsCount % 3) + 1;
-                            submitBtn.textContent = 'ENVIANDO' + '.'.repeat(dotsCount);
+                            submitBtn.textContent = sendingText + '.'.repeat(dotsCount);
                         }, 250);
 
                         // Prep FormSubmit AJAX payload
@@ -607,7 +833,7 @@ document.addEventListener('DOMContentLoaded', () => {
                             "WhatsApp": form.querySelector('#form-whatsapp').value.trim(),
                             "Empresa ou Projeto": form.querySelector('#form-project').value.trim(),
                             "Objetivo do Projeto": form.querySelector('#form-objective').value.trim(),
-                            "_subject": "Novo Contato — Mug Studio",
+                            "_subject": currentLang === 'en' ? "New Contact — Mug Studio" : "Novo Contato — Mug Studio",
                             "_captcha": "false",
                             "_template": "box"
                         };
@@ -627,10 +853,12 @@ document.addEventListener('DOMContentLoaded', () => {
                             // Swap form block with custom success card
                             const formBlock = contactSection.querySelector('.form-block');
                             if (formBlock) {
+                                const successTitle = currentLang === 'en' ? 'Message received.' : 'Mensagem recebida.';
+                                const successSub = currentLang === 'en' ? "We'll respond soon. See you then." : "Vamos responder logo. Até lá.";
                                 formBlock.innerHTML = `
                                     <div class="form-success-card">
-                                        <h3 class="success-title">Mensagem recebida.</h3>
-                                        <p class="success-subheadline">Vamos responder logo. Até lá.</p>
+                                        <h3 class="success-title">${successTitle}</h3>
+                                        <p class="success-subheadline">${successSub}</p>
                                     </div>
                                 `;
                                 setupCursorHovers();
@@ -643,10 +871,12 @@ document.addEventListener('DOMContentLoaded', () => {
                             // Fallback gracefully to keep UX premium and working even if offline
                             const formBlock = contactSection.querySelector('.form-block');
                             if (formBlock) {
+                                const successTitle = currentLang === 'en' ? 'Message received.' : 'Mensagem recebida.';
+                                const successSub = currentLang === 'en' ? "We'll respond soon. See you then." : "Vamos responder logo. Até lá.";
                                 formBlock.innerHTML = `
                                     <div class="form-success-card">
-                                        <h3 class="success-title">Mensagem recebida.</h3>
-                                        <p class="success-subheadline">Vamos responder logo. Até lá.</p>
+                                        <h3 class="success-title">${successTitle}</h3>
+                                        <p class="success-subheadline">${successSub}</p>
                                     </div>
                                 `;
                                 setupCursorHovers();
@@ -682,6 +912,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // ---------------------------------------------------------
     // 7. Execution Pipeline
     // ---------------------------------------------------------
+    updateLanguage(currentLang, true);
     splitTextForReveal(headline);
     triggerEntranceAnimations();
     setupFoldReveals(); // Activate generic fold reveals

@@ -1240,6 +1240,13 @@ body {
     text-align: left;
 }
 
+.about-header-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    text-align: right;
+}
+
 .about-description {
     font-size: 14px;
     font-weight: 400;
@@ -1247,7 +1254,7 @@ body {
     color: var(--color-black);
     opacity: 0.70;
     max-width: 360px;
-    text-align: left;
+    text-align: right;
     text-wrap: balance;
 }
 
@@ -2460,10 +2467,16 @@ body {
         overflow-wrap: break-word;
     }
 
+    .about-header-right {
+        align-items: flex-start;
+        text-align: left;
+    }
+
     .about-description {
         font-size: 13px;
         line-height: 1.4;
         max-width: 100%;
+        text-align: left;
         word-break: keep-all;
         overflow-wrap: break-word;
     }
